@@ -826,4 +826,49 @@ public class StudentReportCard {
 
 👉 তুমি কী চাও? Input-based করবো, নাকি GUI বানাবো? 😊
 
+import java.util.Scanner;
+
+public class BengaliCalculator {
+public static void main(String[] args) {
+Scanner input = new Scanner(System.in);
+
+        // ব্যবহারকারীর কাছ থেকে সংখ্যা নেওয়া
+        System.out.print("প্রথম সংখ্যা লিখুন: ");
+        double num1 = input.nextDouble();
+
+        System.out.print("দ্বিতীয় সংখ্যা লিখুন: ");
+        double num2 = input.nextDouble();
+
+        // অপারেশন চাওয়া
+        System.out.print("অপারেশন নির্বাচন করুন (+, -, *, /): ");
+        char operator = input.next().charAt(0);
+
+        double result;
+
+        // অপারেশন অনুসারে হিসাব
+        if (operator == '+') {
+            result = num1 + num2;
+            System.out.println("ফলাফল: " + result);
+        } else if (operator == '-') {
+            result = num1 - num2;
+            System.out.println("ফলাফল: " + result);
+        } else if (operator == '*') {
+            result = num1 * num2;
+            System.out.println("ফলাফল: " + result);
+        } else if (operator == '/') {
+            if (num2 != 0) {
+                result = num1 / num2;
+                System.out.println("ফলাফল: " + result);
+            } else {
+                System.out.println("ভাগ করা যায় না (০ দিয়ে ভাগ নিষিদ্ধ)।");
+            }
+        } else {
+            System.out.println("ভুল অপারেশন! সঠিক অপারেশন (+, -, *, /) দিন।");
+        }
+
+        input.close();
+    }
+}
+
+
 
